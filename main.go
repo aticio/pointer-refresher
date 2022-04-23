@@ -29,8 +29,11 @@ func main() {
 	// ozu: Actual value of struct
 	// &ozu: Memory address of ozu struct
 	// *ozuPointer: Value of what is being kept in that pointer address
-	ozuPointer := &ozu
-	ozuPointer.updateName("Ozu")
+	//ozuPointer := &ozu
+	//ozuPointer.updateName("Ozu")
+
+	// Go provides a shortcut for pointer usage with just passing the object itself as the pointer address
+	ozu.updateName("Ozu")
 	ozu.print()
 }
 
