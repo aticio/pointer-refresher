@@ -25,12 +25,20 @@ func main() {
 
 	// Go is a pass by value language. When you pass this struct to a function, Go copys that struct.
 	// The struct definition and passed value will be kept seperately in the memory.
-	ozu.updateName("Ozu")
+
+	// ozu: Actual value of struct
+	// &ozu: Memory address of ozu struct
+	// *ozuPointer: Value of what is being kept in that pointer address
+	ozuPointer := &ozu
+	ozuPointer.updateName("Ozu")
 	ozu.print()
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+// Notice how receiver changed
+// When you see a * in front of a type it means that we are working with a pointer (to a person)
+func (pointerToPerson *person) updateName(newFirstName string) {
+	// Here the * is used as an operator to get the value of that pointer (to person)
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func (p person) print() {
