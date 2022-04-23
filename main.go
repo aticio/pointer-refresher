@@ -14,7 +14,7 @@ type person struct {
 }
 
 func main() {
-	jim := person{
+	ozu := person{
 		firstName: "Özgür",
 		lastName:  "Atıcı",
 		contactInfo: contactInfo{
@@ -23,12 +23,14 @@ func main() {
 		},
 	}
 
-	jim.updateName("Ozu")
-	jim.print()
+	// Go is a pass by value language. When you pass this struct to a function, Go copys that struct.
+	// The struct definition and passed value will be kept seperately in the memory.
+	ozu.updateName("Ozu")
+	ozu.print()
 }
 
-func (pointerToPerson *person) updateName(newFirstName string) {
-	(*pointerToPerson).firstName = newFirstName
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
 }
 
 func (p person) print() {
