@@ -44,3 +44,7 @@ func (pointerToPerson *person) updateName(newFirstName string) {
 func (p person) print() {
 	fmt.Printf("%+v", p)
 }
+
+// Turn address into a value = *address
+// Turn value into an address = &value
+// Remember this structure changes when using receiver functions
