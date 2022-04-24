@@ -51,3 +51,12 @@ func (p person) print() {
 // Turn address into a value = *address
 // Turn value into an address = &value
 // Remember this structure changes when using receiver functions
+
+//
+// Reference Types vs Value Types--------------------
+
+// Referance Types: Don't worry about pointers with these
+// slices, maps, channels, pointers, functions
+
+// Value Types: Use pointers to change these tings in a function
+// int, float, string, bool, structs
